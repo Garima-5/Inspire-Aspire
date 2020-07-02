@@ -1,0 +1,111 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+    $scope.user = 'John Doe';
+    $scope.email = 'john.doe@gmail.com';
+});
+</script>
+<style>
+
+input.ng-invalid {
+    background-color:#94999e;
+}
+input.ng-valid {
+    background-color:#00e600;
+}
+textarea.ng-invalid {
+    background-color:#94999e;
+}
+textarea.ng-valid {
+    background-color:#00e600;
+}
+
+
+</style>
+</head>
+<body ng-app="" style="background-size: cover; z-index: 0;background: #355c7d; background:linear-gradient(rgba(53, 92, 125, 0.8),rgba(108, 91, 123, 0.8),
+	rgba(192, 108, 123, 0.8)), url('laptopnew.jpg');">
+
+<nav class="navbar navbar-expand fixed-top" style="background-color:black;">
+<a class="navbar-brand" href="index.html" style="color:white;"><pre style="color:white;font-size:20px;">    INSPIRE ASPIRE         </pre></a>
+<ul class="navbar-nav justify-content-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<li class="nav-item justify-content-center"><a class="nav-link" href="index.html" style="color:white;"><B>HOME</b></a></li>
+	<li class="nav-item justify-content-center"><a class="nav-link" href="aboutus.html" style="color:white;"><b>ABOUT US</b></a></li>
+	<li class="nav-item dropdown justify-content-center"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="fields.html" style="color:white;"><b>FIELDS</b></a>
+		<div class="dropdown-menu">
+		<a class="dropdown-item" href="sports.html">Sports</a>
+		<a class="dropdown-item" href="buisness.html">Business</a>
+		<a class="dropdown-item" href=".html"></a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="yourstory.html" style="color:white;"><b>YOUR STORY</b></a></li>
+	<li class="nav-item"><a class="nav-link" href="contactus.html" style="color:white;"><b>CONTACT US</b></a></li>
+
+	
+</ul>
+</nav>
+<br><br><br><br>
+
+<div class="container" style="text-align:center;">
+	<h2 style="color:yellow;text-align:center;text-shadow: 2px 2px 2px 2px #FFFF33;"><b>Be an inspiration to others</b><h2>
+	<h1 style="color:white;text-align:center;text-shadow: 2px 2px 2px 2px #000000;"><b>SHARE YOUR STORY WITH US</b></h1><br>
+	<div style="text-align:center;">
+		<div class="form-group"style="display:inline-block;text-align:left;padding-left:50px;border-color:black;border-style:solid;width:700;height:800;box-shadow:0px 0px 0px 2px #d3d3d3;">
+			<br>
+			<form name="myForm">
+			<p style="color:white;font-size:20px;"><b>Name:</b><br><br>
+			<input type="text" name="user" ng-model="user" placeholder="Name" required style="width:600px;box-shadow:0px 0px 0px 1px #d3d3d3;">
+			<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+			<span ng-show="myForm.user.$error.required">Username is required.</span>
+			</span>
+			</p>
+
+			<p style="color:white;font-size:20px;"><b>Email:</b><br><br>
+			<input type="email" name="email" ng-model="email" placeholder="Email" required  style="width:600px;box-shadow:0px 0px 0px 1px #d3d3d3;">
+			<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+			<span ng-show="myForm.email.$error.required">Email is required.</span>
+			<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+			</span>
+			</p>
+
+			<p style="color:white;font-size:20px;"><b>Contact No:</b><br><br>
+			<input type="number" name="myNumber" ng-model="myNumber" placeholder="Number" required style="width:600px;box-shadow:0px 0px 0px 1px #d3d3d3;">
+			</p>
+			
+			<p style="color:white;font-size:20px;"><b>Address:</b><br><br>
+			<input name="myAddress" ng-model="myAddress" placeholder="Address" required style="width:600px;box-shadow:0px 0px 0px 1px #d3d3d3;">
+			</p>
+
+			<p style="color:white;font-size:20px;"><b>Story:</b><br><br>
+			<textarea style="width:600px;height:200px;box-shadow:0px 0px 0px 1px #d3d3d3;" ng-model="myTextarea" required placeholder="Story" ></textarea>
+			</p>
+
+			<p>
+			<input type="submit"
+			ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid" style="width:200px; height:30px;box-shadow:1px 1px 1px 1px white;">
+			</p>
+
+
+			</form>
+			
+
+		
+		</div>
+	</div><br>
+</div>
+
+</body>
+</html>
